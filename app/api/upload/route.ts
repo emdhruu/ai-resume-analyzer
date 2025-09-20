@@ -22,7 +22,7 @@ app.post('/upload', async (c) => {
 
     const result = await run.start?.({ inputData: { pdfFile: buffer } });
 
-    return c.json({ success: true, result: result });
+    return c.json({ success: true, result: result.result.analysis || result }, 200);
   } catch (err: any) {
     console.error('Backend test error:', err);
     return c.json({ error: err.message }, 500);

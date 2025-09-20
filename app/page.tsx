@@ -1,19 +1,22 @@
-'use client'
-import { useEffect, useState } from 'react'
+"use client";
+
+import CenterLayout from "./components/CenterLayout";
+import FooterImg from "./components/FooterImg";
+import Header from "./components/Header";
 
 export default function Home() {
-  const [message, setMessage] = useState()
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch('/api/hello')
-      const { message } = await res.json()
-      setMessage(message)
-    }
-    fetchData()
-  }, [])
-
-  if (!message) return <p>Loading...</p>
-
-  return <p>{message}</p>
+  return (
+   <div  className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #14b8a6 100%)`,
+              backgroundSize: "100% 100%",
+            }}
+    >
+    <div className="relative min-h-screen h-screen z-10 p-8 font-sans">
+     <Header/>
+     <CenterLayout/>
+     <FooterImg/>
+    </div>
+    </div>
+  );
 }
