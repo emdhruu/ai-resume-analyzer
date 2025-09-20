@@ -1,5 +1,8 @@
 import { Mastra } from "@mastra/core/mastra";
-import { resumeAgent } from "./agents/resumeAgents";
+import { resumeAnalyzerAgent } from "./agents/resumeAgents";
+import { resumeWorkflow } from "./workflow/resumeInput";
+
 export const mastra = new Mastra({
-    agents: { resumeAgent },    
+    workflows: { resumeWorkflow },
+    agents: { resumeAnalyzerAgent },
 });
