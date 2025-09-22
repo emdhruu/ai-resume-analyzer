@@ -21,6 +21,7 @@ Create a `.env` file in the root of the project and add your keys:
 ```env
 GROQ_API_KEY=your_groq_api_key_here
 MISTRAL_API_KEY=your_mistral_api_key_here
+```
 
 ---
 
@@ -29,3 +30,4 @@ MISTRAL_API_KEY=your_mistral_api_key_here
 ```bash
 bun install
 bun dev
+```
